@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>Counts List</h2>
+		<table>
+		<tr>
+		<th>Id</th>
+		<th>Name</th>
+		</tr>
+		<tr th:each="d : ${dr}">
+		<td th:text="${d.id}"></td>
+		<td th:text="${d.name}"></td>
+		</tr>
+	</table>
+	
+	
+	<form action="/ride_chosen" method="GET">
+	<input type = "text" name = "Name" placeholder ="Name"> 
+	<input type = "number" name = "dest_x" placeholder ="dest_x"> 
+	<input type = "number" name = "dest_y" placeholder ="dest_y"> 
+		
+	<button type="submit">Confirm Driver/ Look for bus</button>
+	</form>
+	</div>
+	
+</body>
+
+</html>
